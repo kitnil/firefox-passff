@@ -712,7 +712,7 @@ PassFF.Page = (function () {
       let url = window.location.href;
       let url_in_blacklist = PassFF.Preferences.autoFillBlacklist
                         .findIndex((str) => { return url.indexOf(str) >= 0; });
-      if (url_in_blacklist >= 0) return;
+        if (! (url_in_blacklist >= 0)) return;
 
       log.info('Start pref-auto-fill');
       if (bestFitItem) {
