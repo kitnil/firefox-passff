@@ -717,9 +717,7 @@ PassFF.Page = (function () {
       log.info('Start pref-auto-fill');
       if (bestFitItem) {
         PassFF.Page.fillInputs(bestFitItem).then((passwordData) => {
-          if (PassFF.Preferences.autoSubmit
-              && PassFF.Pass.getItemsLeafs(matchItems).length == 1
-              && passwordData._other['autosubmit'] !== "false") {
+          if (PassFF.Preferences.autoSubmit) {
             PassFF.Page.safeSubmit();
           }
         });
